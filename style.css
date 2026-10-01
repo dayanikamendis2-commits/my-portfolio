@@ -142,55 +142,35 @@ header {
     border: 1px solid #38bdf8;
 }
 
-/* ==================== CODE CARD ==================== */
+/* ==================== HERO PROFILE PHOTO ==================== */
 .hero-visual {
-    width: 420px;
+    width: 380px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.code-card {
-    width: 380px;
-    padding: 25px;
-    background: #111c33;
-    border: 1px solid #38bdf8;
-    border-radius: 15px;
-    box-shadow: 0 0 40px rgba(56, 189, 248, 0.15);
-    transform: rotate(2deg);
+.profile-img-container {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    padding: 6px;
+    background: linear-gradient(135deg, #38bdf8, #1e3a5f);
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.25);
     transition: 0.4s;
 }
 
-.code-card:hover {
-    transform: rotate(0deg) translateY(-8px);
+.profile-img-container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 45px rgba(56, 189, 248, 0.4);
 }
 
-.code-top {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 25px;
-}
-
-.code-top span {
-    width: 12px;
-    height: 12px;
+.profile-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 50%;
-    background: #38bdf8;
-}
-
-.code-content {
-    font-family: monospace;
-    font-size: 15px;
-    line-height: 2;
-    color: #94a3b8;
-}
-
-.code-content span {
-    color: #38bdf8;
-}
-
-.code-content b {
-    color: #ffffff;
+    display: block;
 }
 
 /* ==================== SECTION TITLE ==================== */
@@ -483,4 +463,153 @@ footer {
     .about-content, .contact-container, .skills-container {
         grid-template-columns: 1fr;
     }
+}
+
+/* ==================== SKILLS BADGES STYLING ==================== */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.skill-category {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 25px;
+    transition: 0.3s;
+}
+
+.skill-category:hover {
+    border-color: #38bdf8;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.1);
+}
+
+.skill-category h3 {
+    color: #f8fafc;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill-category h3 i {
+    color: #38bdf8;
+}
+
+.skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-badge {
+    background: #0f172a;
+    color: #38bdf8;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.skill-badge:hover {
+    background: #38bdf8;
+    color: #0f172a;
+    transform: scale(1.05);
+}
+
+/* ==================== TIMELINE STYLING ==================== */
+.education {
+    padding: 80px 20px;
+    background: #0f172a;
+}
+
+.timeline-container {
+    max-width: 800px;
+    margin: 40px auto 0;
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background: #334155;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -30px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #38bdf8;
+    border: 3px solid #0f172a;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #38bdf8;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timeline-content {
+    background: #1e293b;
+    border: 1px solid #334155;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.timeline-content:hover {
+    border-color: #38bdf8;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.1);
+}
+
+.timeline-content h3 {
+    font-size: 1.1rem;
+    color: #f8fafc;
+    margin-bottom: 5px;
+}
+
+.timeline-content .institution {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.timeline-content p {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    line-height: 1.5;
 }
