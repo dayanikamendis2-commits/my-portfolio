@@ -1,5 +1,4 @@
 /* ==================== GLOBAL ==================== */
-
 * {
     margin: 0;
     padding: 0;
@@ -21,9 +20,7 @@ section {
     scroll-margin-top: 80px;
 }
 
-
 /* ==================== NAVIGATION ==================== */
-
 header {
     width: 100%;
     position: fixed;
@@ -62,13 +59,18 @@ header {
     transition: 0.3s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .nav-links a.active {
     color: #38bdf8;
 }
 
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: #38bdf8;
+    cursor: pointer;
+}
 
 /* ==================== HOME ==================== */
-
 .hero {
     min-height: 100vh;
     display: flex;
@@ -140,9 +142,7 @@ header {
     border: 1px solid #38bdf8;
 }
 
-
 /* ==================== CODE CARD ==================== */
-
 .hero-visual {
     width: 420px;
     display: flex;
@@ -193,9 +193,7 @@ header {
     color: #ffffff;
 }
 
-
 /* ==================== SECTION TITLE ==================== */
-
 .section-title {
     text-align: center;
     margin-bottom: 60px;
@@ -213,9 +211,7 @@ header {
     color: #ffffff;
 }
 
-
 /* ==================== ABOUT ==================== */
-
 .about {
     max-width: 1100px;
     margin: auto;
@@ -276,9 +272,7 @@ header {
     font-size: 14px;
 }
 
-
 /* ==================== SKILLS ==================== */
-
 .skills {
     max-width: 1100px;
     margin: auto;
@@ -312,11 +306,25 @@ header {
 
 .skill-card p {
     color: #94a3b8;
+    margin-bottom: 15px;
 }
 
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tags span {
+    background: #1e293b;
+    color: #38bdf8;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    border: 1px solid #1e3a5f;
+}
 
 /* ==================== PROJECTS ==================== */
-
 .projects {
     max-width: 1100px;
     margin: auto;
@@ -374,9 +382,7 @@ header {
     font-size: 12px;
 }
 
-
 /* ==================== CONTACT ==================== */
-
 .contact {
     max-width: 1100px;
     margin: auto;
@@ -422,9 +428,7 @@ header {
     word-break: break-word;
 }
 
-
 /* ==================== FOOTER ==================== */
-
 footer {
     text-align: center;
     padding: 30px 20px;
@@ -433,11 +437,8 @@ footer {
     font-size: 14px;
 }
 
-
 /* ==================== RESPONSIVE ==================== */
-
 @media (max-width: 900px) {
-
     .hero {
         flex-direction: column;
         align-items: flex-start;
@@ -451,66 +452,35 @@ footer {
     .projects-container {
         grid-template-columns: 1fr;
     }
-
 }
 
-
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
 
     .nav-links {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: #0f172a;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        border-bottom: 1px solid #1e293b;
         display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
     }
 
     .hero h1 {
         font-size: 42px;
     }
 
-    .hero h2 {
-        font-size: 21px;
-    }
-
-    .about-content {
+    .about-content, .contact-container, .skills-container {
         grid-template-columns: 1fr;
     }
-
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
-
-    .skills-container {
-        grid-template-columns: 1fr;
-    }
-
-    .section-title h2 {
-        font-size: 32px;
-    }
-
-}
-
-
-@media (max-width: 500px) {
-
-    .hero {
-        padding-top: 130px;
-    }
-
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .code-card {
-        width: 100%;
-    }
-
-    .hero-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .btn {
-        text-align: center;
-        margin-right: 0;
-    }
-
 }
