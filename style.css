@@ -259,51 +259,6 @@ header {
     padding: 100px 20px;
 }
 
-.skills-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.skill-card {
-    background: #111c33;
-    border: 1px solid #1e3a5f;
-    padding: 30px;
-    border-radius: 12px;
-    transition: 0.3s;
-}
-
-.skill-card:hover {
-    transform: translateY(-6px);
-    border-color: #38bdf8;
-}
-
-.skill-card h3 {
-    color: #38bdf8;
-    margin-bottom: 12px;
-    font-size: 21px;
-}
-
-.skill-card p {
-    color: #94a3b8;
-    margin-bottom: 15px;
-}
-
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.skill-tags span {
-    background: #1e293b;
-    color: #38bdf8;
-    padding: 6px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    border: 1px solid #1e3a5f;
-}
-
 /* ==================== PROJECTS ==================== */
 .projects {
     max-width: 1100px;
@@ -409,7 +364,7 @@ header {
 }
 
 /* ==================== FOOTER ==================== */
-footer {
+<footer>
     text-align: center;
     padding: 30px 20px;
     border-top: 1px solid #1e293b;
@@ -430,6 +385,10 @@ footer {
     }
 
     .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .edu-cert-layout {
         grid-template-columns: 1fr;
     }
 }
@@ -528,15 +487,32 @@ footer {
     transform: scale(1.05);
 }
 
-/* ==================== TIMELINE STYLING ==================== */
+/* ==================== EDUCATION & CERTIFICATIONS LAYOUT ==================== */
 .education {
-    padding: 80px 20px;
+    padding: 100px 20px;
     background: #0f172a;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+.edu-cert-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.column-heading {
+    font-size: 1.4rem;
+    color: #38bdf8;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Timeline Styles */
 .timeline-container {
-    max-width: 800px;
-    margin: 40px auto 0;
     position: relative;
     padding-left: 30px;
 }
@@ -553,7 +529,7 @@ footer {
 
 .timeline-item {
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .timeline-item:last-child {
@@ -612,4 +588,564 @@ footer {
     font-size: 0.9rem;
     color: #cbd5e1;
     line-height: 1.5;
+}
+
+/* Certifications Grid & Cards Styling */
+.cert-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.creative-card.cert-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.creative-card.cert-card:hover {
+    border-color: #38bdf8;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.15);
+}
+
+.card-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    z-index: 2;
+}
+
+.cert-img-container {
+    width: 100%;
+    height: 160px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 1px solid #334155;
+    background: #0f172a;
+}
+
+.cert-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.cert-card:hover .cert-img {
+    transform: scale(1.05);
+}
+
+.cert-card h4 {
+    color: #f8fafc;
+    font-size: 1.05rem;
+    margin-bottom: 5px;
+}
+
+.cert-card .place {
+    color: #38bdf8;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.cert-card .desc {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* ==================== CERTIFICATE MODAL STYLING ==================== */
+.cert-card {
+    cursor: pointer;
+}
+
+.cert-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content-container {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    max-width: 650px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 25px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    animation: modalScale 0.3s ease-in-out;
+}
+
+@keyframes modalScale {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #0f172a;
+    border: 1px solid #334155;
+    margin-bottom: 20px;
+}
+
+.modal-info h3 {
+    color: #f8fafc;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.modal-place {
+    color: #38bdf8;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.modal-desc {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #94a3b8;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 2010;
+}
+
+.modal-close:hover {
+    color: #38bdf8;
+}
+
+/* ==================== PROJECT CARD & GALLERY STYLING ==================== */
+.project-card {
+    cursor: pointer;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 25px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #38bdf8;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.project-img-container {
+    width: 100%;
+    height: 160px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 1px solid #334155;
+    background: #0f172a;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* cover වෙනුවට contain දාන්න */
+    background: #0f172a;
+    transition: 0.3s;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.05);
+}
+
+.project-number {
+    font-size: 1.2rem;
+    color: #38bdf8;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.project-card h3 {
+    color: #f8fafc;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-tech span {
+    background: #0f172a;
+    color: #38bdf8;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    border: 1px solid #334155;
+}
+
+/* Modal Gallery Grid for Projects */
+.modal-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.modal-gallery img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background: #0f172a;
+    transition: 0.3s;
+}
+
+.modal-gallery img:hover {
+    transform: scale(1.03);
+    border-color: #38bdf8;
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+}
+
+/* Terminal Styling */
+.terminal-section {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    background: rgba(10, 15, 30, 0.5);
+}
+
+.terminal-container {
+    width: 100%;
+    max-width: 700px;
+    background: #0d1117;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+}
+
+.terminal-header {
+    background: #161b22;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #30363d;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.t-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.t-btn.red { background: #ff5f56; }
+.t-btn.yellow { background: #ffbd2e; }
+.t-btn.green { background: #27c93f; }
+
+.terminal-title {
+    margin: 0 auto;
+    color: #8b949e;
+    font-size: 13px;
+}
+
+.terminal-body {
+    padding: 20px;
+    color: #c9d1d9;
+    font-size: 14px;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.terminal-output p {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.terminal-output .highlight {
+    color: #58a6ff;
+    font-weight: bold;
+}
+
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.prompt {
+    color: #3fb950;
+    font-weight: bold;
+}
+
+#terminalInput {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #c9d1d9;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    flex-grow: 1;
+}
+
+/* AI Chatbot Widget Styling */
+.ai-chatbot-widget {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.chat-toggle-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.chat-toggle-btn:hover {
+    transform: scale(1.08);
+}
+
+.badge-pulse {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 12px;
+    height: 12px;
+    background: #22c55e;
+    border-radius: 50%;
+    border: 2px solid #0f172a;
+}
+
+.chat-popup {
+    position: absolute;
+    bottom: 75px;
+    right: 0;
+    width: 320px;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    animation: slideUp 0.3s ease;
+}
+
+.chat-popup.active {
+    display: flex;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.chat-header {
+    background: #1e293b;
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #334155;
+}
+
+.chat-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #f8fafc;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+}
+
+.close-chat {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.close-chat:hover {
+    color: #f8fafc;
+}
+
+.chat-body {
+    padding: 15px;
+    height: 250px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #090d16;
+}
+
+.chat-message {
+    max-width: 85%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.bot-msg {
+    background: #1e293b;
+    color: #e2e8f0;
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+}
+
+.user-msg {
+    background: #2563eb;
+    color: #ffffff;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+}
+
+.chat-footer {
+    padding: 10px;
+    background: #1e293b;
+    display: flex;
+    gap: 8px;
+    border-top: 1px solid #334155;
+}
+
+.chat-footer input {
+    flex-grow: 1;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    padding: 8px 10px;
+    color: white;
+    font-size: 13px;
+    outline: none;
+}
+
+.chat-footer input:focus {
+    border-color: #2563eb;
+}
+
+.chat-footer button {
+    background: #2563eb;
+    border: none;
+    color: white;
+    padding: 0 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.chat-footer button:hover {
+    background: #1d4ed8;
+}
+
+/* Project Status Badges Styling */
+.project-card {
+    position: relative;
+}
+
+.project-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.badge-completed {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.badge-progress {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    animation: pulseBadge 2s infinite;
+}
+
+@keyframes pulseBadge {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; box-shadow: 0 0 10px rgba(96, 165, 250, 0.4); }
+    100% { opacity: 0.8; }
 }

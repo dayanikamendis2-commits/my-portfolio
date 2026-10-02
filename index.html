@@ -23,6 +23,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -100,7 +101,32 @@
         </div>
     </section>
 
- <!-- ==================== SKILLS SECTION ==================== -->
+    <!-- Interactive Terminal Section -->
+<section class="terminal-section">
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="t-btn red"></span>
+                <span class="t-btn yellow"></span>
+                <span class="t-btn green"></span>
+            </div>
+            <div class="terminal-title">gothmi@portfolio:~ (bash)</div>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+            <div class="terminal-output">
+                <p>Welcome to Gothmi Mendis Portfolio Terminal v1.0.0</p>
+                <p>Type <span class="highlight">'help'</span> to see available commands.</p>
+                <br>
+            </div>
+            <div class="terminal-input-line">
+                <span class="prompt">gothmi@portfolio:~$</span>
+                <input type="text" id="terminalInput" autofocus autocomplete="off" spellcheck="false">
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- ==================== SKILLS SECTION ==================== -->
     <section id="skills" class="skills">
         <div class="section-title">
             <p>WHAT I BRING TO THE TABLE</p>
@@ -147,37 +173,105 @@
         </div>
     </section>
 
-
-    <!-- ==================== EDUCATION & TIMELINE ==================== -->
+    <!-- ==================== EDUCATION & CERTIFICATIONS ==================== -->
     <section id="education" class="education">
         <div class="section-title">
-            <p>ACADEMIC BACKGROUND</p>
+            <p>ACADEMIC BACKGROUND & CREDENTIALS</p>
             <h2>Education & Certifications</h2>
         </div>
 
-        <div class="timeline-container">
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">2024 - Present</div>
-                <div class="timeline-content">
-                    <h3>Higher National Diploma in Information Technology (HNDIT)</h3>
-                    <p class="institution">Sri Lanka Institute of Advanced Technological Education (SLIATE) - ATI Kandy</p>
-                    <p>Pursuing a full-time HNDIT, focusing on software development, database management, and system analysis.</p>
+        <div class="edu-cert-layout">
+            <!-- Left Column: Education Timeline -->
+            <div class="edu-column">
+                <h3 class="column-heading"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2024 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Higher National Diploma in Information Technology (HNDIT)</h3>
+                            <p class="institution">Sri Lanka Institute of Advanced Technological Education (SLIATE) - ATI Kandy</p>
+                            <p>Pursuing a full-time HNDIT, focusing on software development, database management, and system analysis.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Professional Focus</div>
+                        <div class="timeline-content">
+                            <h3>Software Quality Assurance & Full Stack Development</h3>
+                            <p class="institution">Self-Driven Projects & Intern Training</p>
+                            <p>Gaining hands-on experience in manual testing, bug tracking, and building robust systems using Java, PHP, and Laravel.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Professional Focus</div>
-                <div class="timeline-content">
-                    <h3>Software Quality Assurance & Full Stack Development</h3>
-                    <p class="institution">Self-Driven Projects & Intern Training</p>
-                    <p>Gaining hands-on experience in manual testing, bug tracking, and building robust systems using Java, PHP, and Laravel.</p>
+            <!-- Right Column: Certifications -->
+            <div class="cert-column">
+                <h3 class="column-heading"><i class="fa-solid fa-certificate"></i> Certifications</h3>
+                
+                <div class="cert-grid">
+                    <!-- Certificate 1 -->
+                    <div class="creative-card cert-card">
+                        <div class="card-badge">Verified</div>
+                        <div class="cert-img-container">
+                            <img src="web.png.jpeg" alt="Front-End Web Development Certificate" class="cert-img">
+                        </div>
+                        <h4>Front-End Web Development</h4>
+                        <p class="place">University of Moratuwa (CODL)</p>
+                        <p class="desc">Online learning programme conducted by Department of Information Technology[cite: 3].</p>
+                    </div>
+
+                    <!-- Certificate 2 -->
+                    <div class="creative-card cert-card">
+                        <div class="card-badge">Verified</div>
+                        <div class="cert-img-container">
+                            <img src="python.png.jpeg" alt="Python for Beginners Certificate" class="cert-img">
+                        </div>
+                        <h4>Python for Beginners</h4>
+                        <p class="place">University of Moratuwa (CODL)</p>
+                        <p class="desc">Online learning programme conducted by Department of Computer Science & Engineering[cite: 4].</p>
+                    </div>
+
+                    <!-- Certificate 3 -->
+                    <div class="creative-card cert-card">
+                        <div class="card-badge">Verified</div>
+                        <div class="cert-img-container">
+                            <img src="se.png.png" alt="Software Engineering Certificate" class="cert-img">
+                        </div>
+                        <h4>CS302: Software Engineering</h4>
+                        <p class="place">Saylor Academy University</p>
+                        <p class="desc">Certificate of achievement issued in September 2026[cite: 5].</p>
+                    </div>
+
+                    <!-- Certificate 4 -->
+                    <div class="creative-card cert-card">
+                        <div class="card-badge">Verified</div>
+                        <div class="cert-img-container">
+                            <img src="testing.png.png" alt="Testing Certificate" class="cert-img">
+                        </div>
+                        <h4>Free Automation - Testing for Beginners</h4>
+                        <p class="place">Simplilearn SkillUp</p>
+                        <p class="desc">Successfully completed online course demonstrating initiative in skills[cite: 6].</p>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- ==================== CERTIFICATE MODAL (FULL VIEW POPUP) ==================== -->
+    <div id="certModal" class="cert-modal">
+        <span class="modal-close">&times;</span>
+        <div class="modal-content-container">
+            <img class="modal-img" id="modalImg" src="" alt="Certificate Full View">
+            <div class="modal-info">
+                <h3 id="modalTitle">Certificate Title</h3>
+                <p id="modalPlace" class="modal-place">Institution</p>
+                <p id="modalDesc" class="modal-desc">Description goes here...</p>
+            </div>
+        </div>
+    </div>
     </section>
-  
 
     <!-- ==================== PROJECTS SECTION ==================== -->
     <section id="projects" class="projects">
@@ -186,48 +280,62 @@
             <h2>Projects</h2>
         </div>
 
-        <div class="projects-container">
-            <div class="project-card">
-                <div class="project-number">01</div>
-                <h3>AI-Driven Question Parser System</h3>
-                <p>
-                    An intelligent parsing system designed to process and extract questions using Python and Laravel framework backend logic.
-                </p>
-                <div class="project-tech">
-                    <span>Python</span>
-                    <span>Laravel</span>
-                    <span>AI Logic</span>
-                    <span>MySQL</span>
-                </div>
-            </div>
+    <!-- Project 1: AI-Driven Question Parser System -->
+<div class="creative-card project-card">
+    <span class="project-badge badge-completed">Completed</span>
+    
+    <div class="project-number">01</div>
+    <h3>AI-Driven Question Parser System</h3>
+    <p class="desc">
+        An intelligent parsing system designed to process and extract questions using Python and Laravel framework backend logic.
+    </p>
+    <div class="project-tech">
+        <span>Python</span>
+        <span>Laravel</span>
+        <span>AI Logic</span>
+        <span>MySQL</span>
+    </div>
+</div>
 
-            <div class="project-card">
-                <div class="project-number">02</div>
-                <h3>Fresh Slice 65 Bakery Management System</h3>
-                <p>
-                    A comprehensive desktop application built to handle inventory, user management, and stock operations efficiently.
-                </p>
-                <div class="project-tech">
-                    <span>Java</span>
-                    <span>Java Swing</span>
-                    <span>NetBeans</span>
-                    <span>MySQL</span>
-                </div>
-            </div>
+<!-- Project 2: Bakery Management System -->
+<div class="creative-card project-card"
+    data-title="Fresh Slice 65 Bakery Management System"
+    data-tech="Java, Java Swing, NetBeans, MySQL"
+    data-desc="A comprehensive desktop application built to handle inventory, user management, and stock operations efficiently.">
+    
+    <span class="project-badge badge-completed">Completed</span>
+    
+    <div class="project-number">02</div>
+    <h3>Fresh Slice 65 Bakery Management System</h3>
+    <p class="desc">
+        A comprehensive desktop application built to handle inventory, user management, and stock operations efficiently.
+    </p>
+    <div class="project-tech">
+        <span>Java</span>
+        <span>Java Swing</span>
+        <span>NetBeans</span>
+        <span>MySQL</span>
+    </div>
+</div>
 
-            <div class="project-card">
-                <div class="project-number">03</div>
-                <h3>Mobile Shop Management System</h3>
-                <p>
-                    A web-based system created to manage mobile items, customer transactions, and administrative logins securely.
-                </p>
-                <div class="project-tech">
-                    <span>PHP</span>
-                    <span>MySQL</span>
-                    <span>HTML/CSS</span>
-                    <span>JavaScript</span>
-                </div>
-            </div>
+<!-- Project 3: Mobile Shop Management System -->
+<div class="creative-card project-card">
+    <span class="project-badge badge-progress">In Progress</span>
+    
+    <div class="project-number">03</div>
+    <h3>Mobile Shop Management System</h3>
+    <p class="desc">
+        A web-based system created to manage mobile items, customer transactions, and administrative logins securely.
+    </p>
+    <div class="project-tech">
+        <span>PHP</span>
+        <span>MySQL</span>
+        <span>HTML/CSS</span>
+        <span>JavaScript</span>
+    </div>
+</div>
+            
+  
         </div>
     </section>
 
@@ -269,6 +377,32 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- Floating AI Assistant Chatbot Widget -->
+<div class="ai-chatbot-widget">
+    <div class="chat-popup" id="chatPopup">
+        <div class="chat-header">
+            <div class="chat-title">
+                <span class="status-dot"></span>
+                <span>Gothmi's AI Assistant</span>
+            </div>
+            <button class="close-chat" id="closeChat">&times;</button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot-msg">
+                Hello! 👋 I'm Gothmi's virtual assistant. Want to know about her projects (like Fresh Slice 65 or AI Question Parser) or tech stack? Ask me below!
+            </div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off">
+            <button id="sendChatBtn">Send</button>
+        </div>
+    </div>
+    <button class="chat-toggle-btn" id="chatToggleBtn">
+        💬 <span class="badge-pulse"></span>
+    </button>
+</div>
+
 </body>
 
 </html>
